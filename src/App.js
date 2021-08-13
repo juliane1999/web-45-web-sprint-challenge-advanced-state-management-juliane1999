@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import SmurfContext from "./contexts/SmurfContext";
 
-import {fetchStart} from './actions'
+import {fetchSmurfs} from './actions'
 import {connect} from 'react-redux'
 
 class App extends Component {
@@ -34,15 +34,15 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    smurfs: state.smurfs,
-    isLoading: state.loading,
-    error: state.error
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     smurfs: state.smurfs,
+//     isLoading: state.loading,
+//     error: state.error
+//   }
+// }
 
-export default connect(mapStateToProps, {fetchStart}) (App);
+export default connect(null, {fetchSmurfs}) (App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
