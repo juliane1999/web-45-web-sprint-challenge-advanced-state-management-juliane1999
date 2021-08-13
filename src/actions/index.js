@@ -31,8 +31,8 @@ export const fetchFail = (error)=> {
 
     
 export const ADD_SMURF = 'ADD_SMURF';
-export const addSmurf = ()=> {
-    return({type: ADD_SMURF});
+export const addSmurf = (data)=> {
+    return({type: ADD_SMURF, payload: data});
 }
 
 export const ADD_ERROR = 'ADD_ERROR';
