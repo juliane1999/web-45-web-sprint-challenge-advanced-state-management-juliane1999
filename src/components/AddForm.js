@@ -20,12 +20,12 @@ const AddForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.addSmurf(name,nickname,position,description);
+        props.addSmurf('value')
         if (state.name === "" || state.position === "" || state.nickname === "")
         { props.fetchFail('error') }
     }
 
-    const addError = fetchFail.error
+    const addError = props.fetchFail.error
 
 
 
@@ -63,7 +63,8 @@ const mapStateToProps = state => {
     position: state.position,
     description: state.description,
     error: state.error,
-    add: state.add
+    add: state.add,
+    value: state.value
     }
 }
 
