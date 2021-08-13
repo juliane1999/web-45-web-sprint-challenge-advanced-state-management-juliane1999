@@ -1,7 +1,7 @@
 import React from 'react';
 import Smurf from './Smurf';
 import { connect } from 'react-redux'
-import { fetchSmurfs } from '../actions';
+import { fetchStart } from '../actions';
 
  const SmurfList = ()=> {
     const isLoading = false;
@@ -30,7 +30,7 @@ const mapStateToProps = state => {
     }
 }
   
-  export default connect(mapStateToProps, {fetchSmurfs})(SmurfList)
+  export default connect(mapStateToProps, {fetchStart})(SmurfList)
 
 
 //Task List:

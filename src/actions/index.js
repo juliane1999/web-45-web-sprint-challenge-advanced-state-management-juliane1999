@@ -1,9 +1,22 @@
 import axios from 'axios';
 
+
+export const fetchSmurfs = () => {
+    return (dispatch) => {
+        axios.get('http://localhost:3333/smurfs')
+        .then(res => {
+            dispatch(fetchSuccess(res.data))
+        })
+        .catch(err => {
+            dispatch(fetchFail(err))
+        })
+    }
+}
+
     
-export const FETCH_SMURFS = 'FETCH_SMURFS';
-export const fetchSmurfs = ()=> {
-    return({type: FETCH_SMURFS});
+export const FETCH_START = 'FETCH_START';
+export const fetchStart = ()=> {
+    return({type: FETCH_START});
 }
 
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
