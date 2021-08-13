@@ -8,6 +8,10 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
+import SmurfContext from "./contexts/SmurfContext";
+
+import {fetchSmurfs} from './actions'
+import {connect} from 'react-redux'
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +34,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    smurfs: state.smurfs,
+    isLoading: state.loading,
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps, {fetchSmurfs}) (App);
 
 //Task List:
 //1. Connect the fetchSmurfs actions to the App component.
