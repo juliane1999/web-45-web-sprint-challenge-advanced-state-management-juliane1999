@@ -22,13 +22,12 @@ const AddForm = (props) => {
         e.preventDefault();
         props.addSmurf(name,nickname,position,description);
         if (state.name === "" || state.position === "" || state.nickname === "")
-
-        {
-            //  = fetchFail();
-        }
+        { props.fetchFail('Error!') }
     }
 
-    const errorMessage = addError;
+    const errorMessage = props.addError;
+
+
 
     return(<section>
         <h2>Add Smurf</h2>
@@ -62,7 +61,9 @@ const mapStateToProps = state => {
     name: state.name,
     nickname: state.nickname,
     position: state.position,
-    description: state.description
+    description: state.description,
+    error: state.error,
+    add: state.add
     }
 }
 

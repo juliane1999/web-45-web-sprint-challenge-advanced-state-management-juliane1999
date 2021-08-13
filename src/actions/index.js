@@ -44,8 +44,8 @@ export const addSmurf = (value)=> {
 }
 
 export const ADD_ERROR = 'ADD_ERROR';
-export const addError = ()=> {
-    return({type: ADD_ERROR });
+export const addError = (add)=> {
+    return({type: ADD_ERROR, payload: add});
 }
 
 
