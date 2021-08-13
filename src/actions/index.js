@@ -27,10 +27,6 @@ export const fetchSuccess = (smurfs)=> {
 
 }
 
-// export const FETCH_SUCCESS = 'FETCH_SUCCESS';
-// export const fetchSuccess = (smurf)=> {
-//     return({type: FETCH_SUCCESS, payload: {name: smurf.name, nickname: smurf.nickname, position: smurf.position, summary: smurf.summary, id: smurf.id}});
-// }
 
 export const FETCH_FAIL = 'FETCH_FAIL';
 export const fetchFail = (error)=> {

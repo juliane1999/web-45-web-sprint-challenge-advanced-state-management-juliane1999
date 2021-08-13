@@ -25,7 +25,7 @@ const AddForm = (props) => {
         { props.fetchFail('error') }
     }
 
-    const addError = props.addError.add
+    const addError = 'Error!!'
 
 
 
@@ -64,7 +64,6 @@ const mapStateToProps = state => {
     description: state.description,
     error: state.error,
     add: state.add,
-    value: state.value
     }
 }
 
