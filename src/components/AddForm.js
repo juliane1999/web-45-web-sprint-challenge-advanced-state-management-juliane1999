@@ -19,8 +19,10 @@ const AddForm = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        if (state.name === "" || state.position === "" || state.nickname === "") {
-            addError = "Name, position and nickname fields are required.";
+        if (state.name === "" || state.position === "" || state.nickname === "")
+
+        {
+            fetchFail = "Name, position and nickname fields are required.";
         }
     }
 

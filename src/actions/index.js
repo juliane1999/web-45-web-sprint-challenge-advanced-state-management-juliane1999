@@ -3,6 +3,7 @@ import axios from 'axios';
 
 export const fetchSmurfs = () => {
     return (dispatch) => {
+        dispatch(fetchStart())
         axios.get('http://localhost:3333/smurfs')
         .then(res => {
             dispatch(fetchSuccess(res.data))
@@ -21,8 +22,15 @@ export const fetchStart = ()=> {
 
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const fetchSuccess = (smurfs)=> {
-    return({type: FETCH_SUCCESS, payload: smurfs});
+    return({type: FETCH_SUCCESS, payload: smurfs
+})
+
 }
+
+// export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+// export const fetchSuccess = (smurf)=> {
+//     return({type: FETCH_SUCCESS, payload: {name: smurf.name, nickname: smurf.nickname, position: smurf.position, summary: smurf.summary, id: smurf.id}});
+// }
 
 export const FETCH_FAIL = 'FETCH_FAIL';
 export const fetchFail = (error)=> {
@@ -31,8 +39,8 @@ export const fetchFail = (error)=> {
 
     
 export const ADD_SMURF = 'ADD_SMURF';
-export const addSmurf = (data)=> {
-    return({type: ADD_SMURF, payload: data});
+export const addSmurf = (value)=> {
+    return({type: ADD_SMURF, payload: value});
 }
 
 export const ADD_ERROR = 'ADD_ERROR';

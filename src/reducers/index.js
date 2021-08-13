@@ -27,7 +27,7 @@ const reducer = (state = initialState, action) =>{
         case(FETCH_SUCCESS):
         return({
           ...state,
-          smurf: action.payload,
+          smurfs: action.payload,
           isLoading: false
         });
 
@@ -41,15 +41,7 @@ const reducer = (state = initialState, action) =>{
         case(ADD_SMURF):
         return({
             ...state,
-            smurfs: [...state, action.payload,
-                {
-                    name:action.payload,
-                    nickname: action.payload,
-                    position: action.payload,
-                    summary: action.payload,
-                    id: action.payload,
-                }
-            ]
+            smurfs: [...state, action.payload]
         })
 
         case(ADD_ERROR):

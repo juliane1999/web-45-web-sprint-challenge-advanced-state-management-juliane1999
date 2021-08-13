@@ -3,37 +3,38 @@ import Smurf from './Smurf';
 import { connect } from 'react-redux'
 import { fetchSuccess, fetchSmurfs } from '../actions';
 
- const SmurfList = ()=> {
+
+ const SmurfList = (props)=> {
     const isLoading = false;
-    const testSmurf = {
+    const testSmurf = props.fetchSuccess;
+    const {smurfs} = props
+   
         // id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
         // name:'Poppa Smurf',
         // position:'Village Leader',
         // nickname: 'Pops',
         // description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
-
-        // fetchSmurfs.map(smurf => smurf)
         
-    }
-
     if (isLoading) {
         return <h1>Loading...</h1>;
     }
 
-    return(<div className="listContainer">
-        <Smurf smurf={testSmurf}/>
-    </div>);
-}
 
-// const mapStateToProps = state => {
-//     return{
-//         smurfs: state.smurfs,
-//         isLoading: state.isLoading,
-//         error: state.error
-//     }
-// }
+    return(<div className="listContainer">
+    
+    {smurfs.map(() => <Smurf smurf={testSmurf}/>)}
+
+    </div>);
+ }
+
+ 
+const mapStateToProps = state => {
+    return{
+        smurfs: state.smurfs,
+    }
+}
   
-  export default connect(null, {fetchSuccess, fetchSmurfs})(SmurfList)
+  export default connect(mapStateToProps, {fetchSuccess, fetchSmurfs})(SmurfList)
 
 
 //Task List:
