@@ -25,7 +25,7 @@ const AddForm = (props) => {
         { props.fetchFail('error') }
     }
 
-    const addError = props.fetchFail.error
+    const addError = props.addError
 
 
 
