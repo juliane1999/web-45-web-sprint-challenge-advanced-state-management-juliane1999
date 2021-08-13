@@ -34,13 +34,7 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     smurfs: state.smurfs,
-//     isLoading: state.loading,
-//     error: state.error
-//   }
-// }
+
 
 export default connect(null, {fetchSmurfs}) (App);
 

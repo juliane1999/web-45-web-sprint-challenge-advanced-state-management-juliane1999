@@ -6,7 +6,7 @@ import { fetchSuccess, fetchSmurfs } from '../actions';
 
  const SmurfList = (props)=> {
     const isLoading = false;
-    const testSmurf = props.fetchSuccess;
+    const testSmurf = props.fetchSmurfs;
     const {smurfs} = props
 
     if (isLoading) {
