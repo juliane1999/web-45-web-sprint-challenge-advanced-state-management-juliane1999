@@ -3,7 +3,7 @@ import { addError,fetchFail,addSmurf } from '../actions';
 import {connect} from 'react-redux'
 
 const AddForm = (props) => {
-    const {name, position, description, nickname} = props;
+    const { name, position, description, nickname} = props;
     const [state, setState] = useState({
         name:"",
         position:"",
@@ -22,10 +22,10 @@ const AddForm = (props) => {
         e.preventDefault();
         props.addSmurf(name,nickname,position,description);
         if (state.name === "" || state.position === "" || state.nickname === "")
-        { props.fetchFail('Error!') }
+        { props.addError('error') }
     }
 
-    const errorMessage = props.addError;
+    const addError = fetchFail.error
 
 
 
@@ -49,7 +49,7 @@ const AddForm = (props) => {
                 <textarea onChange={handleChange} value={state.description} name="description" id="description" />
             </div>
             {
-                errorMessage && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {addError}</div>
+                addError && <div data-testid="errorAlert" className="alert alert-danger" role="alert">Error: {addError}</div>
             }
             <button>Submit Smurf</button>
         </form>
