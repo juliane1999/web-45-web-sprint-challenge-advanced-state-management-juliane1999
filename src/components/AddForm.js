@@ -22,7 +22,7 @@ const AddForm = (props) => {
         e.preventDefault();
         props.addSmurf('smurf')
         if (state.name === "" || state.position === "" || state.nickname === "")
-        { props.fetchFail('error') }
+        { props.fetchFail('Error!') }
     }
 
     const addError = 'Error!!'

@@ -18,6 +18,7 @@ import { fetchSuccess, fetchSmurfs } from '../actions';
     
     {smurfs.map(() => <Smurf smurf={testSmurf}/>)}
 
+
     </div>);
  }
 
